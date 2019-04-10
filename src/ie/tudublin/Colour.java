@@ -9,51 +9,56 @@ public class Colour{
     private String colour;
 
     public Colour(processing.data.TableRow row){
-        r=row.getString("R");
-        g=row.getString("G");
-        b=row.getString("B");
-        colour=row.getString("Colour");
+        r=row.getString("r");
+        g=row.getString("g");
+        b=row.getString("b");
+        colour=row.getString("colour");
+    }
+
+    public String toString()
+    {
+        return colour + "\t" + r + "\t" + g + "\t" + b;  
     }
 
     /**
      * @return the r
      */
-    public char getR() {
+    public String getR() {
         return r;
     }
 
     /**
      * @param r the r to set
      */
-    public void setR(char r) {
+    public void setR(String r) {
         this.r = r;
     }
 
     /**
      * @return the g
      */
-    public char getG() {
+    public String getG() {
         return g;
     }
 
     /**
      * @param g the g to set
      */
-    public void setG(char g) {
+    public void setG(String g) {
         this.g = g;
     }
 
     /**
      * @return the b
      */
-    public char getB() {
+    public String getB() {
         return b;
     }
 
     /**
      * @param b the b to set
      */
-    public void setB(char b) {
+    public void setB(String b) {
         this.b = b;
     }
 
@@ -69,10 +74,5 @@ public class Colour{
      */
     public void setColour(String colour) {
         this.colour = colour;
-    }
-
-    public String toString()
-    {
-        return colour + "\t" + r + "\t" + g + "\t" + b;  
     }
 }

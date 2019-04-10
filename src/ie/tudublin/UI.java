@@ -26,19 +26,25 @@ public class UI extends PApplet
 		separate(381);
 		separate(1);
 		separate(92);
+		loadColours();
+		printColours();
 	}
 
 	public void setup() 
 	{
-		loadData();
 		
 	}
-	public void loadData(){
-		Table table = loadTable("colour.csv","header");
+	public void loadColours(){
+		Table table = loadTable("colours.csv","header");
 
 		for (TableRow row : table.rows()){
 			Colour colour = new Colour(row);
-			 colours.add(colour)
+			 colours.add(colour);
+		}
+	}
+	public void printColours(){
+		for (Colour colour : colours){
+			println(colour);
 		}
 	}
 	public void draw()
