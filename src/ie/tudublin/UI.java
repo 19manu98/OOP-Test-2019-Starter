@@ -27,12 +27,14 @@ public class UI extends PApplet
 		separate(1);
 		separate(92);
 		loadColours();
-		printColours();
+		
 	}
 
 	public void setup() 
 	{
-		
+		printColours();
+		println();
+		findColor(2);
 	}
 	public void loadColours(){
 		Table table = loadTable("colours.csv","header");
@@ -42,9 +44,17 @@ public class UI extends PApplet
 			 colours.add(colour);
 		}
 	}
+
 	public void printColours(){
 		for (Colour colour : colours){
 			println(colour);
+		}
+	}
+
+	public void findColor(int value){
+		for (Colour colour : colours){
+			if (colour.value == value)
+				println(colour);
 		}
 	}
 	public void draw()
