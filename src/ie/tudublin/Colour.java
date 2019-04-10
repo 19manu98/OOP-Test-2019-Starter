@@ -6,18 +6,20 @@ public class Colour{
     public String r;
     public String g;
     public String b;
+    public int value;
     private String colour;
 
     public Colour(processing.data.TableRow row){
         r=row.getString("r");
         g=row.getString("g");
         b=row.getString("b");
+        value = row.getInt("value");
         colour=row.getString("colour");
     }
 
     public String toString()
     {
-        return colour + "\t" + r + "\t" + g + "\t" + b;  
+        return colour + "\t" + r + "\t" + g + "\t" + b +"\t" + value;  
     }
 
     /**
@@ -63,6 +65,20 @@ public class Colour{
     }
 
     /**
+     * @return the value
+     */
+    public int getValue() {
+        return value;
+    }
+
+    /**
+     * @param value the value to set
+     */
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    /**
      * @return the colour
      */
     public String getColour() {
@@ -75,4 +91,6 @@ public class Colour{
     public void setColour(String colour) {
         this.colour = colour;
     }
+
+   
 }
